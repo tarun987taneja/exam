@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body bgcolor="#E6E6FA">
+	<foam>
+	<h1>Form</h1>
+
+  Name:<br>
+  <input type="text" name="f_name" required>
+  <br><br>
+   E-mail:
+  <input type="email" name="email" required><br><br>
+
+  Contact Details:<br>
+  <textarea rows="2" cols="20" required></textarea><br>
+
+  PHONE NUMBER:
+  <input type="tel" name="usrtel" required><br><br>
+
+  NO. OF COPIES:
+  <input type="number" name="points" required><br><br>
+  
+PHOTO SIZE :
+<select>
+  <option value="32*40">32*40</option>
+  <option value="8*10">8*10</option>
+  <option value="NORMAL">NORMAL</option>
+  
+</select><br><br>
+   Date of Delivery :
+  <input type="month" name="delivery" required><br><br>
+
+  <input type="submit" value="Submit" onclick="myfunction()"><br><br>
+
+</foam>
+<script>
+function myfunction(){
+	var a = confirm("you have to pay $5 per copy");
+	if(a==true){
+		alert("order confirmed");
+
+	}
+	return false;
+}	
+</script>	
+</body>
+</html>

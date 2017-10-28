@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+   <head>
+      <title>Orientation Event</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+      
+      <script>
+         $(document).on("pagecreate","#page1",function(event) {
+            $(window).on("orientationchange",function(e) {
+               if(e.orientation == "portrait") {
+                  $("p").text("portrait orientation!!!");
+                  alert("portrait");
+                  window.location = "form.html";
+                     var time = 3000;
+                     navigator.vibrate(time);
+                     var pattern = [1000, 1000, 1000, 1000];
+                     navigator.vibrate(pattern);
+                  
+                  //if (screen.width <= 1024) window.location.replace("form.html")
+                  //else window.location.replace("index.html");
+               } else {
+
+                  $("p").text("landscape orientation!!!");
+                  alert("landscape");
+                  window.location = "index.html";
+                     var time = 3000;
+                     navigator.vibrate(time);
+                     var pattern = [1000, 1000, 1000, 1000];
+                     navigator.vibrate(pattern);
+                   }
+            });
+         });
+      </script>
+
+   </head>
+   
+   <body>
+      <div data-role = "page" id = "page1">
+
+         <div data-role = "header">
+            <h2>Header</h2>
+         </div>
+
+         <div data-role = "main" class = "ui-content">
+            <p>To see the orientation effect, you must rotate your window...</p>
+            
+         </div>
+      
+         <div data-role = "footer">
+            <h2>Footer</h2>
+         </div>
+      
+      </div>
+   </body>
+</html>
